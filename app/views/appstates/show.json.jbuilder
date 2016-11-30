@@ -1,1 +1,0 @@
-json.partial! "appstates/appstate", appstate: @appstate

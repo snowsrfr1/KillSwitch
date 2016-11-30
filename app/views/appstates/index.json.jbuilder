@@ -1,1 +1,0 @@
-json.array! @appstates, partial: 'appstates/appstate', as: :appstate
