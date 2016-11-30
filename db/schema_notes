@@ -1,0 +1,21 @@
+TABLE: user
+-handled by devise
+
+TABLE: payment
+-id
+-user_id
+-cc_number
+-expiry_month
+-expiry_year
+-cvv
+
+TABLE: app
+-id
+-bundleid   #i.e. com.mycompany.myapp
+-key		#hard coded into users' apps. Passed to web service as a private key of sorts.
+-appstate_id
+-motd
+
+TABLE: appstate
+-id
+-description
