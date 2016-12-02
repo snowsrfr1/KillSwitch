@@ -5,11 +5,17 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update_attribute :admin, !@user.admin
+
+    render 'show', :notice => "moo!"
+  end
+
   def show
     @user = User.find(params[:id])
-    unless @user == current_user
+    unless @user == current_user || current_user.admin?
       redirect_to root_path, :alert => "Access denied."
     end
   end
-
 end
