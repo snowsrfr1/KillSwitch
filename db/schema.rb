@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202073400) do
+ActiveRecord::Schema.define(version: 20161202205843) do
+
+  create_table "apps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "appstate_id"
+    t.string   "message"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "bundlename"
+    t.string   "key"
+    t.index ["appstate_id"], name: "index_apps_on_appstate_id"
+    t.index ["user_id"], name: "index_apps_on_user_id"
+  end
 
   create_table "appstates", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

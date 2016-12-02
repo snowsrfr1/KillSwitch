@@ -10,5 +10,5 @@ puts 'CREATED ADMIN USER: ' << user.email
 
 appstate_list = ['active', 'inactive']
 appstate_list.each do |appstate|
-	Appstate.create(name: appstate)
+	Appstate.create(description: appstate)
 end

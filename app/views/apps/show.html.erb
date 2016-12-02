@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bundle Identifier:</strong>
+  <%= @app.bundlename %>
+</p>
+
+<p>
+  <strong>Appstate:</strong>
+  <%= @app.appstate.description %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @app.message %>
+</p>
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>
