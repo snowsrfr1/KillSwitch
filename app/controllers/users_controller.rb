@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attribute :admin, !@user.admin
 
-    render 'show', :notice => "moo!"
+    flash[:notice] = "Saved!"
+    redirect_to :back
   end
 
   def show
