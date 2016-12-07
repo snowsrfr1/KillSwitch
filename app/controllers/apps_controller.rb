@@ -1,3 +1,4 @@
+require 'digest/sha2'
 class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy]
 
@@ -31,6 +32,7 @@ class AppsController < ApplicationController
     @app = App.new(app_params)
     @user = User.find(current_user.id)
     @app.user_id = @user.id
+    @app.key = Digest::SHA2.hexdigest(@app.bundlename + current_user.id.to_s)
 
     respond_to do |format|
       if @app.save
